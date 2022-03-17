@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "88075937391",
+    "project_id": "bpsdm-accf0",
+    "storage_bucket": "bpsdm-accf0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:88075937391:android:8518448fba41338df1cf9a",
+        "android_client_info": {
+          "package_name": "com.bpsdm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "88075937391-cga6mhknuipgh5gqc06mgp45f2ve1p0d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtaToqcydhbeFWKFTyqnw4UB1mJgwIQOE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "88075937391-cga6mhknuipgh5gqc06mgp45f2ve1p0d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
