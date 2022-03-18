@@ -237,22 +237,22 @@ export default function Home({ navigation }) {
 
           <DataKategori
             warna={colors.primary}
-            onPress={() => navigation.navigate('Jenis')}
+            onPress={() => navigation.navigate('Pengaduan')}
             icon="camera-outline"
             nama="BUAT"
             nama2="PENGADUAN"
           />
           <DataKategori
             warna={colors.secondary}
-            onPress={() => navigation.navigate('SuratIzin')}
+            onPress={() => navigation.navigate('ListData')}
             icon="list-outline"
             nama="LIHAT"
-            nama2="PENGADUANMU"
+            nama2="PENGADUANKU"
           />
 
           <DataKategori
             warna={colors.tertiary}
-            onPress={() => navigation.navigate('ListData')}
+            onPress={() => navigation.navigate('Survey')}
             icon="apps"
             nama="INDEKS"
             nama2="KEPUASAN"

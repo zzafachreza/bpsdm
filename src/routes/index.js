@@ -50,6 +50,9 @@ import {
   SuratIzin,
   Jenis,
   Asset,
+  Pengaduan,
+  Survey,
+  PengaduanUpdate,
 } from '../pages';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { BottomNavigator } from '../components';
@@ -196,6 +199,93 @@ export default function Router() {
           },
         }}
       />
+
+      <Stack.Screen
+        name="Pengaduan"
+        component={Pengaduan}
+        options={{
+          headerTitle: 'BUAT PENGADUAN',
+          headerTintColor: 'white',
+          headerStyle: {
+            backgroundColor: colors.primary,
+            elevation: 0, // remove shadow on Android
+          },
+
+          cardStyleInterpolator: ({ current, layouts }) => {
+            return {
+              cardStyle: {
+                transform: [
+                  {
+                    translateX: current.progress.interpolate({
+                      inputRange: [0, 1],
+                      outputRange: [layouts.screen.width, 0],
+                    }),
+                  },
+                ],
+              },
+            };
+          },
+        }}
+      />
+
+
+      <Stack.Screen
+        name="PengaduanUpdate"
+        component={PengaduanUpdate}
+        options={{
+          headerTitle: 'TANGGAPI PENGADUAN',
+          headerTintColor: 'white',
+          headerStyle: {
+            backgroundColor: colors.primary,
+            elevation: 0, // remove shadow on Android
+          },
+
+          cardStyleInterpolator: ({ current, layouts }) => {
+            return {
+              cardStyle: {
+                transform: [
+                  {
+                    translateX: current.progress.interpolate({
+                      inputRange: [0, 1],
+                      outputRange: [layouts.screen.width, 0],
+                    }),
+                  },
+                ],
+              },
+            };
+          },
+        }}
+      />
+
+      <Stack.Screen
+        name="Survey"
+        component={Survey}
+        options={{
+          headerTitle: 'INDEKS KEPUASAN',
+          headerTintColor: 'white',
+          headerStyle: {
+            backgroundColor: colors.primary,
+            elevation: 0, // remove shadow on Android
+          },
+
+          cardStyleInterpolator: ({ current, layouts }) => {
+            return {
+              cardStyle: {
+                transform: [
+                  {
+                    translateX: current.progress.interpolate({
+                      inputRange: [0, 1],
+                      outputRange: [layouts.screen.width, 0],
+                    }),
+                  },
+                ],
+              },
+            };
+          },
+        }}
+      />
+
+
       <Stack.Screen
         name="Register"
         component={Register}
@@ -678,7 +768,7 @@ export default function Router() {
         name="ListData"
         component={ListData}
         options={({ route, navigation }) => ({
-          title: 'HISTORY ABSENSI',
+          title: 'LIHAT PENGADUANKU',
           headerTintColor: colors.white,
           headerStyle: {
             backgroundColor: colors.primary,

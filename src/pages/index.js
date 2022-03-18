@@ -39,10 +39,17 @@ import Jadwal from './Jadwal';
 import SuratIzin from './SuratIzin';
 import Jenis from './Jenis';
 import Asset from './Asset';
+import Pengaduan from './Pengaduan';
+import Survey from './Survey';
+import PengaduanUpdate from './PengaduanUpdate';
+
 
 
 export {
   Splash,
+  PengaduanUpdate,
+  Pengaduan,
+  Survey,
   SuratIzin,
   Asset,
   Jadwal,

@@ -14,6 +14,7 @@ import { storeData, getData } from '../../utils/localStorage';
 import axios from 'axios';
 import { colors } from '../../utils/colors';
 import { windowWidth, fonts } from '../../utils/fonts';
+import { Icon } from 'react-native-elements';
 
 const wait = timeout => {
   return new Promise(resolve => {
@@ -37,7 +38,7 @@ export default function ({ navigation, route }) {
   const getDataBarang = () => {
     getData('user').then(res => {
       axios
-        .post('https://mysukha.zavalabs.com/api/absen.php', {
+        .post('https://bpsdm.zavalabs.com/api/1pengaduan.php', {
           id_user: res.id,
         })
         .then(x => {
@@ -49,107 +50,71 @@ export default function ({ navigation, route }) {
 
   const renderItem = ({ item }) => (
     <TouchableOpacity
+      onPress={() => navigation.navigate('ListDetail', item)}
       style={{
         padding: 10,
         margin: 10,
         backgroundColor: 'white',
         elevation: 1,
+        flexDirection: 'row'
       }}>
-      <View style={{ flexDirection: 'row', padding: 10 }}>
-        <Text
-          style={{
-            flex: 1,
-            fontSize: windowWidth / 30,
-            color: colors.primary,
-            fontFamily: fonts.secondary[600],
-          }}>
-          {item.nama_lengkap}
-        </Text>
-        <Text
-          style={{
-            fontSize: windowWidth / 30,
-            color: colors.black,
-            fontFamily: fonts.secondary[600],
-          }}>
-          {item.tanggal}
-        </Text>
-      </View>
+      <Image source={{ uri: item.foto_pengaduan }} style={{ width: 100, height: 100 }} />
 
-      <View
-        style={{
-          flexDirection: 'row',
-          padding: 10,
-          borderTopWidth: 1,
-          borderTopColor: colors.tertiary,
+      <View style={{
+        paddingLeft: 10,
+        flex: 1,
+      }}>
+        <View style={{
+          flex: 1,
         }}>
-        <View
-          style={{
-            alignItems: 'center',
-            justifyContent: 'center',
-            // flex: 1,
+          <Text style={{
+            fontFamily: fonts.secondary[600],
+            color: colors.black,
+            fontSize: windowWidth / 28
           }}>
-          <Text
-            style={{
-              fontSize: windowWidth / 30,
-              fontFamily: fonts.secondary[600],
-              color: colors.black,
-            }}>
-            MASUK
+            Kode
           </Text>
-          <Text
-            style={{
-              fontSize: windowWidth / 30,
-              textAlign: 'center',
-              color: colors.secondary,
-            }}>
-            {item.jam_masuk}
-          </Text>
-        </View>
-        <View style={{ justifyContent: 'center', alignItems: 'center', flex: 1 }}>
-          <Text
-            style={{
-              fontSize: windowWidth / 30,
-              textAlign: 'center',
-              backgroundColor: item.tipe == "KANTOR" ? colors.primary : colors.zavalabs2,
-              color: colors.white,
-              paddingHorizontal: 10,
-            }}>
-            LAMA DI {item.tipe}
-          </Text>
-          <Text
-            style={{
-              fontSize: windowWidth / 30,
-              textAlign: 'center',
-              color: colors.black,
-            }}>
-            {item.durasi}
-          </Text>
-        </View>
-        <View
-          style={{
-            alignItems: 'center',
-            justifyContent: 'center',
+          <Text style={{
 
-            // flex: 1,
+            fontFamily: fonts.secondary[400],
+            color: colors.black,
+            fontSize: windowWidth / 28
           }}>
-          <Text
-            style={{
-              fontSize: windowWidth / 30,
-              fontFamily: fonts.secondary[600],
-              color: colors.black,
-            }}>
-            PULANG
+            {item.kode}
           </Text>
-          <Text
-            style={{
-              fontSize: windowWidth / 30,
-              textAlign: 'center',
-              color: colors.secondary,
-            }}>
-            {item.jam_pulang}
+          <Text style={{
+            fontFamily: fonts.secondary[600],
+            color: colors.black,
+            fontSize: windowWidth / 28
+          }}>
+            Tanggal dan Jam Pengaduan
           </Text>
+          <Text style={{
+
+            fontFamily: fonts.secondary[400],
+            color: colors.black,
+            fontSize: windowWidth / 28
+          }}>
+            {item.tanggal_pengaduan} Pukul {item.jam_pengaduan}
+          </Text>
+        </View>
+        <View style={{
+          padding: 10,
+          justifyContent: 'center',
+          alignItems: 'center',
+          flexDirection: 'row',
+          backgroundColor: item.status == "SUDAH DI TANGGAPI" ? colors.primary : colors.secondary
+        }}>
+          <Icon type='ionicon' name={item.status == "SUDAH DI TANGGAPI" ? 'shield-checkmark' : 'close-circle'} color={colors.white} />
+          <Text style={{
+            left: 5,
+            fontFamily: fonts.secondary[600],
+            color: colors.white,
+            fontSize: windowWidth / 28
+          }}>{item.status}</Text>
         </View>
       </View>
+
     </TouchableOpacity>
   );
 
