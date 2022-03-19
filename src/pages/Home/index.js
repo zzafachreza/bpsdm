@@ -252,7 +252,13 @@ export default function Home({ navigation }) {
 
           <DataKategori
             warna={colors.tertiary}
-            onPress={() => navigation.navigate('Survey')}
+            onPress={() => {
+              if (user.tipe == "ADMIN") {
+                navigation.navigate('SurveyHasil')
+              } else {
+                navigation.navigate('Survey')
+              }
+            }}
             icon="apps"
             nama="INDEKS"
             nama2="KEPUASAN"

@@ -49,7 +49,7 @@ export default function Survey() {
     })
 
     const [data, setData] = useState({
-        sapras: '',
+        sarana_prasarana: '',
         penyelenggara: '',
         layanan_inti: '',
         layanan_pendukung: '',
@@ -65,7 +65,7 @@ export default function Survey() {
             justifyContent: 'space-between'
         }}>
 
-            {/* sapras  */}
+            {/* sarana_prasarana  */}
             <View style={{
                 backgroundColor: colors.white,
                 borderWidth: 1,
@@ -81,7 +81,7 @@ export default function Survey() {
                     <Text style={{
                         fontFamily: fonts.secondary[600],
                         color: colors.primary,
-                    }}>SAPRAS</Text>
+                    }}>SARANA PRASARANAN</Text>
 
                 </View>
                 <View style={{
@@ -92,97 +92,140 @@ export default function Survey() {
 
                 }}>
 
-                    <TouchableOpacity onPress={() => {
-                        setPilih1({
-                            ...pilih1,
-                            a: true,
-                            b: false,
-                            c: false,
-                            d: false
+                    <View style={{
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}>
+                        <TouchableOpacity onPress={() => {
+                            setPilih1({
+                                ...pilih1,
+                                a: true,
+                                b: false,
+                                c: false,
+                                d: false
 
-                        })
+                            })
 
-                        setData({
-                            ...data,
-                            sapras: 'TIDAK PUAS'
-                        })
+                            setData({
+                                ...data,
+                                sarana_prasarana: 'TIDAK PUAS'
+                            })
 
-                    }
-                    } style={{
-                        backgroundColor: '#FF0000', borderWidth: pilih1.a ? 3 : 0,
-                        width: 60,
-                        height: 60,
-                        borderRadius: 30,
-                    }} />
-                    <TouchableOpacity onPress={() => {
-                        setPilih1({
-                            ...pilih1,
-                            a: false,
-                            b: true,
-                            c: false,
-                            d: false
+                        }
+                        } style={{
+                            backgroundColor: '#FF0000', borderWidth: pilih1.a ? 3 : 0,
+                            width: 60,
+                            height: 60,
+                            borderRadius: 30,
+                        }} /><Text style={{
+                            fontFamily: fonts.secondary[600],
+                            color: colors.black,
+                            fontSize: 10,
+                            top: 5,
+                            textAlign: 'center'
+                        }}>TIDAK PUAS</Text>
+                    </View>
+                    <View style={{
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}>
+                        <TouchableOpacity onPress={() => {
+                            setPilih1({
+                                ...pilih1,
+                                a: false,
+                                b: true,
+                                c: false,
+                                d: false
 
-                        })
+                            })
 
-                        setData({
-                            ...data,
-                            sapras: 'KURANG PUAS'
-                        })
-                    }
+                            setData({
+                                ...data,
+                                sarana_prasarana: 'KURANG PUAS'
+                            })
+                        }
 
-                    } style={{
-                        backgroundColor: '#FFFF00', borderWidth: pilih1.b ? 3 : 0,
-                        width: 60,
-                        height: 60,
+                        } style={{
+                            backgroundColor: '#FFFF00', borderWidth: pilih1.b ? 3 : 0,
+                            width: 60,
+                            height: 60,
 
-                        borderRadius: 30,
-                    }} />
-                    <TouchableOpacity onPress={() => {
-                        setPilih1({
-                            ...pilih1,
-                            a: false,
-                            b: false,
-                            c: true,
-                            d: false
+                            borderRadius: 30,
+                        }} /><Text style={{
+                            fontFamily: fonts.secondary[600],
+                            color: colors.black,
+                            fontSize: 10,
+                            top: 5,
+                            textAlign: 'center'
+                        }}>KURANG PUAS</Text>
+                    </View>
+                    <View style={{
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}>
+                        <TouchableOpacity onPress={() => {
+                            setPilih1({
+                                ...pilih1,
+                                a: false,
+                                b: false,
+                                c: true,
+                                d: false
 
-                        })
+                            })
 
-                        setData({
-                            ...data,
-                            sapras: 'PUAS'
-                        })
-                    }
+                            setData({
+                                ...data,
+                                sarana_prasarana: 'PUAS'
+                            })
+                        }
 
-                    } style={{
-                        backgroundColor: '#92D050',
-                        borderWidth: pilih1.c ? 3 : 0,
-                        width: 60,
-                        height: 60,
+                        } style={{
+                            backgroundColor: '#92D050',
+                            borderWidth: pilih1.c ? 3 : 0,
+                            width: 60,
+                            height: 60,
 
-                        borderRadius: 30,
-                    }} />
-                    <TouchableOpacity onPress={() => {
-                        setPilih1({
-                            ...pilih1,
-                            a: false,
-                            b: false,
-                            c: false,
-                            d: true
+                            borderRadius: 30,
+                        }} /><Text style={{
+                            fontFamily: fonts.secondary[600],
+                            color: colors.black,
+                            fontSize: 10,
+                            top: 5,
+                            textAlign: 'center'
+                        }}>PUAS</Text>
+                    </View>
+                    <View style={{
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}>
+                        <TouchableOpacity onPress={() => {
+                            setPilih1({
+                                ...pilih1,
+                                a: false,
+                                b: false,
+                                c: false,
+                                d: true
 
-                        })
-                        setData({
-                            ...data,
-                            sapras: 'SANGAT PUAS'
-                        })
-                    }
-                    } style={{
-                        backgroundColor: '#00B050', borderWidth: pilih1.d ? 3 : 0,
-                        width: 60,
-                        height: 60,
+                            })
+                            setData({
+                                ...data,
+                                sarana_prasarana: 'SANGAT PUAS'
+                            })
+                        }
+                        } style={{
+                            backgroundColor: '#00B050', borderWidth: pilih1.d ? 3 : 0,
+                            width: 60,
+                            height: 60,
 
-                        borderRadius: 30,
-                    }} />
-
+                            borderRadius: 30,
+                        }} /><Text style={{
+                            fontFamily: fonts.secondary[600],
+                            color: colors.black,
+                            fontSize: 10,
+                            top: 5,
+                            textAlign: 'center'
+                        }}>SANGAT PUAS</Text>
+                    </View>
                 </View>
             </View>
 
@@ -213,96 +256,150 @@ export default function Survey() {
 
                 }}>
 
-                    <TouchableOpacity onPress={() => {
-                        setPilih2({
-                            ...pilih2,
-                            a: true,
-                            b: false,
-                            c: false,
-                            d: false
+                    <View style={{
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}>
+                        <TouchableOpacity onPress={() => {
+                            setPilih2({
+                                ...pilih2,
+                                a: true,
+                                b: false,
+                                c: false,
+                                d: false
 
-                        })
+                            })
 
-                        setData({
-                            ...data,
-                            penyelenggara: 'TIDAK PUAS'
-                        })
+                            setData({
+                                ...data,
+                                penyelenggara: 'TIDAK PUAS'
+                            })
 
-                    }
-                    } style={{
-                        backgroundColor: '#FF0000', borderWidth: pilih2.a ? 3 : 0,
-                        width: 60,
-                        height: 60,
-                        borderRadius: 30,
-                    }} />
-                    <TouchableOpacity onPress={() => {
-                        setPilih2({
-                            ...pilih2,
-                            a: false,
-                            b: true,
-                            c: false,
-                            d: false
+                        }
+                        } style={{
+                            backgroundColor: '#FF0000', borderWidth: pilih2.a ? 3 : 0,
+                            width: 60,
+                            height: 60,
+                            borderRadius: 30,
+                        }} />
+                        <Text style={{
+                            fontFamily: fonts.secondary[600],
+                            color: colors.black,
+                            fontSize: 10,
+                            top: 5,
+                            textAlign: 'center'
+                        }}>TIDAK PUAS</Text>
+                    </View>
 
-                        })
+                    <View style={{
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}>
+                        <TouchableOpacity onPress={() => {
+                            setPilih2({
+                                ...pilih2,
+                                a: false,
+                                b: true,
+                                c: false,
+                                d: false
 
-                        setData({
-                            ...data,
-                            penyelenggara: 'KURANG PUAS'
-                        })
-                    }
+                            })
 
-                    } style={{
-                        backgroundColor: '#FFFF00', borderWidth: pilih2.b ? 3 : 0,
-                        width: 60,
-                        height: 60,
+                            setData({
+                                ...data,
+                                penyelenggara: 'KURANG PUAS'
+                            })
+                        }
 
-                        borderRadius: 30,
-                    }} />
-                    <TouchableOpacity onPress={() => {
-                        setPilih2({
-                            ...pilih2,
-                            a: false,
-                            b: false,
-                            c: true,
-                            d: false
+                        } style={{
+                            backgroundColor: '#FFFF00', borderWidth: pilih2.b ? 3 : 0,
+                            width: 60,
+                            height: 60,
 
-                        })
+                            borderRadius: 30,
+                        }} />
+                        <Text style={{
+                            fontFamily: fonts.secondary[600],
+                            color: colors.black,
+                            fontSize: 10,
+                            top: 5,
+                            textAlign: 'center'
+                        }}>KURANG PUAS</Text>
+                    </View>
 
-                        setData({
-                            ...data,
-                            penyelenggara: 'PUAS'
-                        })
-                    }
+                    <View style={{
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}>
+                        <TouchableOpacity onPress={() => {
+                            setPilih2({
+                                ...pilih2,
+                                a: false,
+                                b: false,
+                                c: true,
+                                d: false
 
-                    } style={{
-                        backgroundColor: '#92D050',
-                        borderWidth: pilih2.c ? 3 : 0,
-                        width: 60,
-                        height: 60,
+                            })
 
-                        borderRadius: 30,
-                    }} />
-                    <TouchableOpacity onPress={() => {
-                        setPilih2({
-                            ...pilih2,
-                            a: false,
-                            b: false,
-                            c: false,
-                            d: true
+                            setData({
+                                ...data,
+                                penyelenggara: 'PUAS'
+                            })
+                        }
 
-                        })
-                        setData({
-                            ...data,
-                            penyelenggara: 'SANGAT PUAS'
-                        })
-                    }
-                    } style={{
-                        backgroundColor: '#00B050', borderWidth: pilih2.d ? 3 : 0,
-                        width: 60,
-                        height: 60,
+                        } style={{
+                            backgroundColor: '#92D050',
+                            borderWidth: pilih2.c ? 3 : 0,
+                            width: 60,
+                            height: 60,
 
-                        borderRadius: 30,
-                    }} />
+                            borderRadius: 30,
+                        }} />
+                        <Text style={{
+                            fontFamily: fonts.secondary[600],
+                            color: colors.black,
+                            fontSize: 10,
+                            top: 5,
+                            textAlign: 'center'
+                        }}>PUAS</Text>
+                    </View>
+
+
+                    <View style={{
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}>
+                        <TouchableOpacity onPress={() => {
+                            setPilih2({
+                                ...pilih2,
+                                a: false,
+                                b: false,
+                                c: false,
+                                d: true
+
+                            })
+                            setData({
+                                ...data,
+                                penyelenggara: 'SANGAT PUAS'
+                            })
+                        }
+                        } style={{
+                            backgroundColor: '#00B050', borderWidth: pilih2.d ? 3 : 0,
+                            width: 60,
+                            height: 60,
+
+                            borderRadius: 30,
+                        }} />
+                        <Text style={{
+                            fontFamily: fonts.secondary[600],
+                            color: colors.black,
+                            fontSize: 10,
+                            top: 5,
+                            textAlign: 'center'
+                        }}>SANGAT PUAS</Text>
+                    </View>
+
+
 
                 </View>
             </View>
@@ -334,96 +431,146 @@ export default function Survey() {
 
                 }}>
 
-                    <TouchableOpacity onPress={() => {
-                        setPilih3({
-                            ...pilih3,
-                            a: true,
-                            b: false,
-                            c: false,
-                            d: false
+                    <View style={{
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}>
+                        <TouchableOpacity onPress={() => {
+                            setPilih3({
+                                ...pilih3,
+                                a: true,
+                                b: false,
+                                c: false,
+                                d: false
 
-                        })
+                            })
 
-                        setData({
-                            ...data,
-                            layanan_inti: 'TIDAK PUAS'
-                        })
+                            setData({
+                                ...data,
+                                layanan_inti: 'TIDAK PUAS'
+                            })
 
-                    }
-                    } style={{
-                        backgroundColor: '#FF0000', borderWidth: pilih3.a ? 3 : 0,
-                        width: 60,
-                        height: 60,
-                        borderRadius: 30,
-                    }} />
-                    <TouchableOpacity onPress={() => {
-                        setPilih3({
-                            ...pilih3,
-                            a: false,
-                            b: true,
-                            c: false,
-                            d: false
+                        }
+                        } style={{
+                            backgroundColor: '#FF0000', borderWidth: pilih3.a ? 3 : 0,
+                            width: 60,
+                            height: 60,
+                            borderRadius: 30,
+                        }} />
+                        <Text style={{
+                            fontFamily: fonts.secondary[600],
+                            color: colors.black,
+                            fontSize: 10,
+                            top: 5,
+                            textAlign: 'center'
+                        }}>TIDAK PUAS</Text>
+                    </View>
+                    <View style={{
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}>
+                        <TouchableOpacity onPress={() => {
+                            setPilih3({
+                                ...pilih3,
+                                a: false,
+                                b: true,
+                                c: false,
+                                d: false
 
-                        })
+                            })
 
-                        setData({
-                            ...data,
-                            layanan_inti: 'KURANG PUAS'
-                        })
-                    }
+                            setData({
+                                ...data,
+                                layanan_inti: 'KURANG PUAS'
+                            })
+                        }
 
-                    } style={{
-                        backgroundColor: '#FFFF00', borderWidth: pilih3.b ? 3 : 0,
-                        width: 60,
-                        height: 60,
+                        } style={{
+                            backgroundColor: '#FFFF00', borderWidth: pilih3.b ? 3 : 0,
+                            width: 60,
+                            height: 60,
 
-                        borderRadius: 30,
-                    }} />
-                    <TouchableOpacity onPress={() => {
-                        setPilih3({
-                            ...pilih3,
-                            a: false,
-                            b: false,
-                            c: true,
-                            d: false
+                            borderRadius: 30,
+                        }} />
+                        <Text style={{
+                            fontFamily: fonts.secondary[600],
+                            color: colors.black,
+                            fontSize: 10,
+                            top: 5,
+                            textAlign: 'center'
+                        }}>KURANG PUAS</Text>
+                    </View>
+                    <View style={{
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}>
+                        <TouchableOpacity onPress={() => {
+                            setPilih3({
+                                ...pilih3,
+                                a: false,
+                                b: false,
+                                c: true,
+                                d: false
 
-                        })
+                            })
 
-                        setData({
-                            ...data,
-                            layanan_inti: 'PUAS'
-                        })
-                    }
+                            setData({
+                                ...data,
+                                layanan_inti: 'PUAS'
+                            })
+                        }
 
-                    } style={{
-                        backgroundColor: '#92D050',
-                        borderWidth: pilih3.c ? 3 : 0,
-                        width: 60,
-                        height: 60,
+                        } style={{
+                            backgroundColor: '#92D050',
+                            borderWidth: pilih3.c ? 3 : 0,
+                            width: 60,
+                            height: 60,
 
-                        borderRadius: 30,
-                    }} />
-                    <TouchableOpacity onPress={() => {
-                        setPilih3({
-                            ...pilih3,
-                            a: false,
-                            b: false,
-                            c: false,
-                            d: true
+                            borderRadius: 30,
+                        }} />
+                        <Text style={{
+                            fontFamily: fonts.secondary[600],
+                            color: colors.black,
+                            fontSize: 10,
+                            top: 5,
+                            textAlign: 'center'
+                        }}>PUAS</Text>
+                    </View>
 
-                        })
-                        setData({
-                            ...data,
-                            layanan_inti: 'SANGAT PUAS'
-                        })
-                    }
-                    } style={{
-                        backgroundColor: '#00B050', borderWidth: pilih3.d ? 3 : 0,
-                        width: 60,
-                        height: 60,
+                    <View style={{
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}>
+                        <TouchableOpacity onPress={() => {
+                            setPilih3({
+                                ...pilih3,
+                                a: false,
+                                b: false,
+                                c: false,
+                                d: true
 
-                        borderRadius: 30,
-                    }} />
+                            })
+                            setData({
+                                ...data,
+                                layanan_inti: 'SANGAT PUAS'
+                            })
+                        }
+                        } style={{
+                            backgroundColor: '#00B050', borderWidth: pilih3.d ? 3 : 0,
+                            width: 60,
+                            height: 60,
+
+                            borderRadius: 30,
+                        }} />
+                        <Text style={{
+                            fontFamily: fonts.secondary[600],
+                            color: colors.black,
+                            fontSize: 10,
+                            top: 5,
+                            textAlign: 'center'
+                        }}>SANGAT PUAS</Text>
+                    </View>
+
 
                 </View>
             </View>
@@ -454,97 +601,145 @@ export default function Survey() {
                     justifyContent: 'space-evenly',
 
                 }}>
+                    <View style={{
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}>
+                        <TouchableOpacity onPress={() => {
+                            setPilih4({
+                                ...pilih4,
+                                a: true,
+                                b: false,
+                                c: false,
+                                d: false
 
-                    <TouchableOpacity onPress={() => {
-                        setPilih4({
-                            ...pilih4,
-                            a: true,
-                            b: false,
-                            c: false,
-                            d: false
+                            })
 
-                        })
+                            setData({
+                                ...data,
+                                layanan_pendukung: 'TIDAK PUAS'
+                            })
 
-                        setData({
-                            ...data,
-                            layanan_pendukung: 'TIDAK PUAS'
-                        })
+                        }
+                        } style={{
+                            backgroundColor: '#FF0000', borderWidth: pilih4.a ? 3 : 0,
+                            width: 60,
+                            height: 60,
+                            borderRadius: 30,
+                        }} />
+                        <Text style={{
+                            fontFamily: fonts.secondary[600],
+                            color: colors.black,
+                            fontSize: 10,
+                            top: 5,
+                            textAlign: 'center'
+                        }}>TIDAK PUAS</Text>
+                    </View>
+                    <View style={{
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}>
+                        <TouchableOpacity onPress={() => {
+                            setPilih4({
+                                ...pilih4,
+                                a: false,
+                                b: true,
+                                c: false,
+                                d: false
 
-                    }
-                    } style={{
-                        backgroundColor: '#FF0000', borderWidth: pilih4.a ? 3 : 0,
-                        width: 60,
-                        height: 60,
-                        borderRadius: 30,
-                    }} />
-                    <TouchableOpacity onPress={() => {
-                        setPilih4({
-                            ...pilih4,
-                            a: false,
-                            b: true,
-                            c: false,
-                            d: false
+                            })
 
-                        })
+                            setData({
+                                ...data,
+                                layanan_pendukung: 'KURANG PUAS'
+                            })
+                        }
 
-                        setData({
-                            ...data,
-                            layanan_pendukung: 'KURANG PUAS'
-                        })
-                    }
+                        } style={{
+                            backgroundColor: '#FFFF00', borderWidth: pilih4.b ? 3 : 0,
+                            width: 60,
+                            height: 60,
 
-                    } style={{
-                        backgroundColor: '#FFFF00', borderWidth: pilih4.b ? 3 : 0,
-                        width: 60,
-                        height: 60,
+                            borderRadius: 30,
+                        }} />
+                        <Text style={{
+                            fontFamily: fonts.secondary[600],
+                            color: colors.black,
+                            fontSize: 10,
+                            top: 5,
+                            textAlign: 'center'
+                        }}>KURANG PUAS</Text>
+                    </View>
+                    <View style={{
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}>
+                        <TouchableOpacity onPress={() => {
+                            setPilih4({
+                                ...pilih4,
+                                a: false,
+                                b: false,
+                                c: true,
+                                d: false
 
-                        borderRadius: 30,
-                    }} />
-                    <TouchableOpacity onPress={() => {
-                        setPilih4({
-                            ...pilih4,
-                            a: false,
-                            b: false,
-                            c: true,
-                            d: false
+                            })
 
-                        })
+                            setData({
+                                ...data,
+                                layanan_pendukung: 'PUAS'
+                            })
+                        }
 
-                        setData({
-                            ...data,
-                            layanan_pendukung: 'PUAS'
-                        })
-                    }
+                        } style={{
+                            backgroundColor: '#92D050',
+                            borderWidth: pilih4.c ? 3 : 0,
+                            width: 60,
+                            height: 60,
 
-                    } style={{
-                        backgroundColor: '#92D050',
-                        borderWidth: pilih4.c ? 3 : 0,
-                        width: 60,
-                        height: 60,
+                            borderRadius: 30,
+                        }} />
+                        <Text style={{
+                            fontFamily: fonts.secondary[600],
+                            color: colors.black,
+                            fontSize: 10,
+                            top: 5,
+                            textAlign: 'center'
+                        }}>PUAS</Text>
+                    </View>
+                    <View style={{
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}>
+                        <TouchableOpacity onPress={() => {
+                            setPilih4({
+                                ...pilih4,
+                                a: false,
+                                b: false,
+                                c: false,
+                                d: true
 
-                        borderRadius: 30,
-                    }} />
-                    <TouchableOpacity onPress={() => {
-                        setPilih4({
-                            ...pilih4,
-                            a: false,
-                            b: false,
-                            c: false,
-                            d: true
+                            })
+                            setData({
+                                ...data,
+                                layanan_pendukung: 'SANGAT PUAS'
+                            })
+                        }
+                        } style={{
+                            backgroundColor: '#00B050', borderWidth: pilih4.d ? 3 : 0,
+                            width: 60,
+                            height: 60,
 
-                        })
-                        setData({
-                            ...data,
-                            layanan_pendukung: 'SANGAT PUAS'
-                        })
-                    }
-                    } style={{
-                        backgroundColor: '#00B050', borderWidth: pilih4.d ? 3 : 0,
-                        width: 60,
-                        height: 60,
+                            borderRadius: 30,
+                        }} />
+                        <Text style={{
+                            fontFamily: fonts.secondary[600],
+                            color: colors.black,
+                            fontSize: 10,
+                            top: 5,
+                            textAlign: 'center'
+                        }}>SANGAT PUAS</Text>
+                    </View>
 
-                        borderRadius: 30,
-                    }} />
 
                 </View>
             </View>

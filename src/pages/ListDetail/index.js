@@ -7,18 +7,27 @@ import {
   FlatList,
   ImageBackground,
   Image,
+  Linking,
 } from 'react-native';
 import axios from 'axios';
 import { fonts, windowWidth } from '../../utils/fonts';
 import { colors } from '../../utils/colors';
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import { MyButton } from '../../components';
+import { getData } from '../../utils/localStorage';
 
 export default function ListDetail({ navigation, route }) {
   const item = route.params;
   navigation.setOptions({ title: item.kode });
   const [data, setData] = useState([]);
 
+  const [user, setUser] = useState({});
+
+  useEffect(() => {
+    getData('user').then(res => {
+      setUser(res);
+    })
+  }, [])
 
   const DataPesanan = () => {
     return (
@@ -239,10 +248,19 @@ export default function ListDetail({ navigation, route }) {
       <View style={{ flex: 1 }}>
         <DataPesanan />
 
-        {item.status == "BELUM DI TANGGAPI" && <View style={{
+        {item.status == "BELUM DI TANGGAPI" && user.tipe == "ADMIN" && <View style={{
           padding: 10,
         }}>
           <MyButton onPress={() => navigation.navigate('PengaduanUpdate', item)} title="TANGGAPI PENGADUAN" iconColor={colors.black} Icons="create-outline" warna={colors.tertiary} colorText={colors.black} />
+        </View>}
+
+        {item.status == "SUDAH DI TANGGAPI" && user.tipe == "ADMIN" && <View style={{
+          padding: 10,
+        }}>
+          <MyButton onPress={() => {
+            // navigation.navigate('PengaduanPrint', item)
+            Linking.openURL('https://bpsdm.zavalabs.com/survey/pengaduan_print?kode=' + item.kode);
+          }} title="PRINT PENGADUAN" iconColor={colors.white} Icons="print-outline" warna={colors.secondary} colorText={colors.white} />
         </View>}
 
       </View>

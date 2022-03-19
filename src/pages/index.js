@@ -42,6 +42,10 @@ import Asset from './Asset';
 import Pengaduan from './Pengaduan';
 import Survey from './Survey';
 import PengaduanUpdate from './PengaduanUpdate';
+import SurveyHasil from './SurveyHasil';
+import PengaduanPrint from './PengaduanPrint';
+
+
 
 
 
@@ -49,7 +53,8 @@ export {
   Splash,
   PengaduanUpdate,
   Pengaduan,
-  Survey,
+  Survey, PengaduanPrint,
+  SurveyHasil,
   SuratIzin,
   Asset,
   Jadwal,

@@ -37,14 +37,27 @@ export default function ({ navigation, route }) {
 
   const getDataBarang = () => {
     getData('user').then(res => {
-      axios
-        .post('https://bpsdm.zavalabs.com/api/1pengaduan.php', {
-          id_user: res.id,
-        })
-        .then(x => {
-          console.log(x.data);
-          setData(x.data);
-        });
+
+      if (res.tipe == "ADMIN") {
+        axios
+          .post('https://bpsdm.zavalabs.com/api/1pengaduan_admin.php', {
+            id_user: res.id,
+          })
+          .then(x => {
+            console.log(x.data);
+            setData(x.data);
+          });
+      } else {
+        axios
+          .post('https://bpsdm.zavalabs.com/api/1pengaduan.php', {
+            id_user: res.id,
+          })
+          .then(x => {
+            console.log(x.data);
+            setData(x.data);
+          });
+      }
+
     });
   };
 

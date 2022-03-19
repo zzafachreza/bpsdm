@@ -159,6 +159,29 @@ export default function Account({ navigation, route }) {
               </Text>
             </View>
 
+            <View
+              style={{
+                marginVertical: 5,
+                padding: 10,
+                backgroundColor: colors.white,
+                borderRadius: 10,
+              }}>
+              <Text
+                style={{
+                  fontFamily: fonts.secondary[600],
+                  color: colors.black,
+                }}>
+                Level
+              </Text>
+              <Text
+                style={{
+                  fontFamily: fonts.secondary[400],
+                  color: colors.primary,
+                }}>
+                {user.tipe}
+              </Text>
+            </View>
+
           </View>
         </View>
 
