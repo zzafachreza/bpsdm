@@ -5,8 +5,10 @@ import {
     View,
     SafeAreaView,
     ActivityIndicator,
+    Linking,
 } from 'react-native';
 import WebView from 'react-native-webview';
+import MyButton from '../../components/MyButton';
 import { colors } from '../../utils/colors';
 
 export default function SurveyHasil({ route }) {
@@ -18,7 +20,7 @@ export default function SurveyHasil({ route }) {
     };
 
     const myUrl = `https://bpsdm.zavalabs.com/survey`;
-
+    const [print, setPrint] = useState(false);
     return (
         <SafeAreaView
             style={{
@@ -50,6 +52,7 @@ export default function SurveyHasil({ route }) {
                     <ActivityIndicator color={colors.primary} size="large" />
                 </View>
             )}
+            <MyButton onPress={() => Linking.openURL(myUrl + '?print=ok')} title="PRINT INDEKS KEPUASAN" warna={colors.secondary} Icons="print" radius={0} />
         </SafeAreaView>
     );
 }

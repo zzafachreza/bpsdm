@@ -9,12 +9,14 @@ import {
   RefreshControl,
   Image,
   TouchableOpacity,
+  Linking,
 } from 'react-native';
 import { storeData, getData } from '../../utils/localStorage';
 import axios from 'axios';
 import { colors } from '../../utils/colors';
 import { windowWidth, fonts } from '../../utils/fonts';
 import { Icon } from 'react-native-elements';
+import MyButton from '../../components/MyButton';
 
 const wait = timeout => {
   return new Promise(resolve => {
@@ -132,23 +134,27 @@ export default function ({ navigation, route }) {
   );
 
   return (
-    <ScrollView
-      refreshControl={
-        <RefreshControl
-          refreshing={refreshing}
-          onRefresh={onRefresh}
-          colors={[colors.primary]}
+    <>
+      <ScrollView
+        refreshControl={
+          <RefreshControl
+            refreshing={refreshing}
+            onRefresh={onRefresh}
+            colors={[colors.primary]}
+          />
+        }
+        style={{
+          padding: 10,
+        }}>
+        <FlatList
+          data={data}
+          renderItem={renderItem}
+          keyExtractor={item => item.id}
         />
-      }
-      style={{
-        padding: 10,
-      }}>
-      <FlatList
-        data={data}
-        renderItem={renderItem}
-        keyExtractor={item => item.id}
-      />
-    </ScrollView>
+
+      </ScrollView>
+      <MyButton onPress={() => Linking.openURL('https://bpsdm.zavalabs.com/survey/laporan')} title="PRINT LAPORAN PENGADUAN" warna={colors.secondary} Icons="print" radius={0} />
+    </>
   );
 }
 
