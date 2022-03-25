@@ -112,7 +112,7 @@ export default function Splash({ navigation }) {
               color: colors.primary,
               textAlign: 'center',
             }}>
-            Sistem Aplikasi layanan Pengaduan
+            Sistem Aplikasi Layanan Pengaduan
           </Text>
           <Text
             style={{

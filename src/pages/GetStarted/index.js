@@ -45,7 +45,7 @@ export default function GetStarted({ navigation }) {
   }).start();
 
   return (
-    <SafeAreaView style={styles.page} resizeMode="cover">
+    <SafeAreaView style={styles.page}>
       {/* <StatusBar backgroundColor={colors.secondary} barStyle="light-content" /> */}
       <View
         style={{
@@ -56,10 +56,28 @@ export default function GetStarted({ navigation }) {
         <Image
           source={require('../../assets/logo_dua.png')}
           style={{
-            resizeMode: 'contain',
-            aspectRatio: 1,
+            height: 100,
+            width: 280,
           }}
         />
+        <Text
+          style={{
+            fontFamily: fonts.secondary[800],
+            fontSize: windowWidth / 10,
+            color: colors.primary,
+            textAlign: 'center',
+          }}>
+          Sistem Aplikasi Layanan Pengaduan
+        </Text>
+        <Text
+          style={{
+            fontFamily: fonts.tertiary[600],
+            fontSize: windowWidth / 10,
+            color: colors.secondary,
+            textAlign: 'center',
+          }}>
+          (SAPA) BPSDM
+        </Text>
       </View>
 
       <MyButton

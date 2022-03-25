@@ -119,7 +119,7 @@ export default function Home({ navigation }) {
       <TouchableOpacity
         onPress={onPress}
         style={{
-          marginVertical: 10,
+          marginVertical: 5,
           backgroundColor: warna,
           padding: 5,
           borderRadius: 10,
@@ -162,8 +162,8 @@ export default function Home({ navigation }) {
   };
 
   return (
-    <ImageBackground
-      // source={require('../../assets/back.jpeg')}
+    <SafeAreaView
+
       style={{
         flex: 1,
         backgroundColor: colors.white,
@@ -179,51 +179,72 @@ export default function Home({ navigation }) {
 
         <View
           style={{
-            height: windowHeight / 9,
-            padding: 10,
-            marginBottom: 20,
-            backgroundColor: colors.white,
+            height: windowHeight / 6,
+            marginBottom: 5,
             flexDirection: 'row',
             // borderBottomLeftRadius: 10,
             // borderBottomRightRadius: 10,
           }}>
 
-          <View style={{ flex: 1, paddingTop: 10, flexDirection: 'row' }}>
-            <View style={{ paddingLeft: 10, flex: 1 }}>
 
-              <Text
-                style={{
-                  fontSize: windowWidth / 30,
-                  color: colors.primary,
-                  fontFamily: fonts.secondary[600],
-                }}>
-                Selamat datang,
-              </Text>
-              <Text
-                style={{
-                  fontSize: windowWidth / 25,
-                  color: colors.black,
-                  fontFamily: fonts.secondary[600],
-                }}>
-                {user.nama_lengkap}
-              </Text>
+          <View style={{ flex: 1, padding: 10, }}>
 
-            </View>
-            <View
+            <Text
               style={{
-                padding: 10,
-                justifyContent: 'center'
+                fontSize: windowWidth / 30,
+                color: colors.primary,
+                fontFamily: fonts.secondary[600],
+              }}>
+              Selamat datang,
+            </Text>
+            <Text
+              style={{
+                fontSize: windowWidth / 25,
+                color: colors.black,
+                fontFamily: fonts.secondary[600],
+              }}>
+              {user.nama_lengkap}
+            </Text>
+
+          </View>
+          <View
+            style={{
+              flex: 2,
+              padding: 10,
+
+              justifyContent: 'center',
+              alignItems: 'center',
+
+            }}>
+            <Image
+              source={require('../../assets/logo_dua.png')}
+              style={{ width: 150, height: 70 }}
+            />
+            <Text
+              style={{
+                fontFamily: fonts.secondary[800],
+                fontSize: windowWidth / 30,
+                color: colors.primary,
 
               }}>
-              <Image
-                source={require('../../assets/logo_dua.png')}
-                style={{ width: 150, height: 70 }}
-              />
-            </View>
-
+              Sistem Aplikasi layanan Pengaduan
+            </Text>
+            <Text
+              style={{
+                fontFamily: fonts.tertiary[600],
+                fontSize: windowWidth / 30,
+                color: colors.secondary,
+                textAlign: 'center',
+              }}>
+              (SAPA) BPSDM
+            </Text>
           </View>
 
         </View>
+
+
+
+
 
         {/* <MyCarouser /> */}
 
@@ -231,8 +252,7 @@ export default function Home({ navigation }) {
 
         <View
           style={{
-            padding: 10,
-            marginTop: 20,
+            paddingHorizontal: 10,
           }}>
 
           <DataKategori
@@ -269,6 +289,6 @@ export default function Home({ navigation }) {
         {/*  */}
 
       </ScrollView>
-    </ImageBackground>
+    </SafeAreaView>
   );
 }

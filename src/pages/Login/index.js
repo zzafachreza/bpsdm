@@ -103,10 +103,27 @@ export default function Login({ navigation }) {
           <Image
             source={require('../../assets/logo_utama.png')}
             style={{
-              resizeMode: 'contain',
-              aspectRatio: 0.5,
+              width: 100,
+              height: 100,
             }}
-          />
+          /><Text
+            style={{
+              fontFamily: fonts.secondary[800],
+              fontSize: windowWidth / 15,
+              color: colors.primary,
+              textAlign: 'center',
+            }}>
+            Sistem Aplikasi layanan Pengaduan
+          </Text>
+          <Text
+            style={{
+              fontFamily: fonts.tertiary[600],
+              fontSize: windowWidth / 15,
+              color: colors.secondary,
+              textAlign: 'center',
+            }}>
+            (SAPA) BPSDM
+          </Text>
         </View>
         <View style={styles.page}>
           <Text
