@@ -26,6 +26,7 @@ const wait = timeout => {
 export default function ({ navigation, route }) {
   const [refreshing, setRefreshing] = React.useState(false);
   const [data, setData] = useState([]);
+  const [tipe, setTipe] = useState('');
 
   const onRefresh = React.useCallback(() => {
     setRefreshing(true);
@@ -39,6 +40,8 @@ export default function ({ navigation, route }) {
 
   const getDataBarang = () => {
     getData('user').then(res => {
+
+      setTipe(res.tipe);
 
       if (res.tipe == "ADMIN") {
         axios
@@ -153,7 +156,8 @@ export default function ({ navigation, route }) {
         />
 
       </ScrollView>
-      <MyButton onPress={() => Linking.openURL('https://bpsdm.zavalabs.com/survey/laporan')} title="PRINT LAPORAN PENGADUAN" warna={colors.secondary} Icons="print" radius={0} />
+      {tipe == "ADMIN" && <MyButton onPress={() => Linking.openURL('https://bpsdm.zavalabs.com/survey/laporan')} title="PRINT LAPORAN PENGADUAN" warna={colors.secondary} Icons="print" radius={0} />}
+
     </>
   );
 }

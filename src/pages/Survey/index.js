@@ -81,7 +81,7 @@ export default function Survey() {
                     <Text style={{
                         fontFamily: fonts.secondary[600],
                         color: colors.primary,
-                    }}>SARANA PRASARANAN</Text>
+                    }}>SARANA PRASARANA</Text>
 
                 </View>
                 <View style={{
